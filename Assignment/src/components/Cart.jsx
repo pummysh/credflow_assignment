@@ -9,8 +9,6 @@ export const Cartpage=()=>{
     const {cart,deleteData,saveItems,quantity,setCart}=useContext(Context);
     const [user,setUser]=useState({});
     const [isModalVisible, setIsModalVisible] = useState(false);
-    // const [flag,setFlag]=useState(false);
-   
 
     const handleChange=(e)=>{
         let {name,value}=e.target;
@@ -30,8 +28,9 @@ export const Cartpage=()=>{
 
             setIsModalVisible(false);
             setCart([]);
-            // setFlag(true);
-            alert("Thanks for purchasing your order will be delivere soon😊🥳🥳");
+            setTimeout(()=>{
+                alert("Thanks for purchasing your order will be delivere soon😊🥳🥳");
+            },2000);
         }
 
     };

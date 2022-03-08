@@ -3,8 +3,9 @@ import {Product} from "./Product";
 import "./style.css"
 import {useContext} from "react";
 import {Context} from "../Context/context";
-import { Pagination } from 'antd';
-import {AiFillHome} from "react-icons/ai";
+// import { Pagination } from 'antd';
+// import {Pagination} from '@material-ui/core/Pagination';
+
 
 
 
@@ -15,8 +16,8 @@ export const Products =()=>{
     const [data,setData]=useState([]);
     const [change,setChange]=useState([]);
     const perPage=50;
+    const [total,setTotal]=useState();
     const [currentPage,setCurrentPage]=useState(1);
-   
     const offset = currentPage * perPage;
 
     useEffect(()=>{
@@ -25,6 +26,7 @@ export const Products =()=>{
         .then(resp => resp.json())
         .then(data =>{ 
             setAllData(data)
+            setTotal(Math.floor(data.length/perPage))
             const slice=data.slice(offset, offset+perPage);
             setData(slice);
             setChange(slice);
@@ -65,8 +67,11 @@ export const Products =()=>{
             <option value={+500}>Reviews above 500</option>     
         </select>
         <div>
-        <Pagination onChange={paginate}  total={allData.length} />
+            <button disabled={currentPage===0} onClick={()=>setCurrentPage(prev=>prev-1)}>prev</button>
+            <span>{currentPage}</span>
+            <button disabled={currentPage===total} onClick={()=>setCurrentPage(prev=>prev+1)}>next</button>
         </div>
+
         <div className="container">
             {
                 data.length>0 ?
@@ -78,8 +83,11 @@ export const Products =()=>{
 
         
         <div>
-        <Pagination onChange={paginate}  total={allData.length} />
+            <button disabled={currentPage===0} onClick={()=>setCurrentPage(prev=>prev-1)}>prev</button>
+            <span>{currentPage}</span>
+            <button disabled={currentPage===total} onClick={()=>setCurrentPage(prev=>prev+1)}>next</button>
         </div>
+
 
 
     </div>
