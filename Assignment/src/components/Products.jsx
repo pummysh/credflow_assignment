@@ -82,11 +82,11 @@ export const Products =()=>{
         </div>
 
         <br />
-        {/* <div>
+        <div>
             <button disabled={currentPage===0} onClick={()=>setCurrentPage(prev=>prev-1)}>prev</button>
             <span>{currentPage}</span>
             <button disabled={currentPage===total} onClick={()=>setCurrentPage(prev=>prev+1)}>next</button>
-        </div> */}
+        </div>
 
 
 
