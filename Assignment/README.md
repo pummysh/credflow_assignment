@@ -1,10 +1,14 @@
 .User have a Product view page where all products are displayed with paginations,we can search through the name of the wine, and filters with reviews 
+#
 .User have an option to add/delete products to/from cart.
+#
 .User have a cart view page, where all products added to cart are display, along with relevant information.
+#
 .User have a save button on the cart view page, where the user can save the products added to the cart for later checkout and it will shown in wishlist page.
+#
 .User have checkout button, after getting click on checkout button page wants user details/information like name, email address, phone number, address etc.
 
-.link:[Create React App](https://assignment-pummysh.vercel.app/)
+.link:[Deployed link](https://assignment-pummysh.vercel.app/)
 
 # Getting Started with Create React App
 
