@@ -81,7 +81,7 @@ export const Products =()=>{
             }
         </div>
 
-        
+        <br />
         <div>
             <button disabled={currentPage===0} onClick={()=>setCurrentPage(prev=>prev-1)}>prev</button>
             <span>{currentPage}</span>
